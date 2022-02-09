@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="IR-fa" dir="rtl">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ثبت نام</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='../global.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='../config.js' defer></script>
+    <script src='main.js' defer></script>
+  </head>
+
+  <body>
+    <div class="back-img" style="overflow: auto;">
+      <div class="w3-card w3-round-xlarge w3-display-middle w3-padding-large"
+        style="margin-top: 100px; max-width: 400px; background-color: rgba(200, 220, 255, 0.5)">
+        <form onsubmit="handleSubmit()" class="" id="form">
+          <div class="w3-panel">
+            <label class="" for="name">نام</label>
+            <input class="" id="name" name="name" placeholder="نام" required />
+          </div>
+          <div class="w3-panel">
+            <label class="" for="family">نام خانوادگی</label>
+            <input class="" id="family" name="family" placeholder="نام خانوادگی" required />
+          </div>
+          <div class="w3-panel">
+            <label class="" for="fname">نام پدر</label>
+            <input class="" id="fname" name="fname" placeholder="نام پدر" required />
+          </div>
+          <div class="w3-panel">
+            <label class="" for="birthday">تاریخ تولد</label>
+            <div class="w3-cell">
+              <div class="w3-third" style="width: 33%;">
+                <input class="" size="5" id="year" name="year" type="number" min="1300" max="1400" placeholder="سال" required />
+              </div>
+              <div class="w3-third" style="width: 33%;">
+                <input class="" size="4" id="month" name="month" type="number" min="1" max="12" placeholder="ماه" required />
+              </div>
+              <div class="w3-third" style="width: 33%;">
+                <input class="" size="4" id="day" name="day" type="number" min="1" max="31" placeholder="روز" required />
+              </div>
+            </div>
+          </div>
+          <div class="w3-panel">
+            <label class="" for="address">نشانی</label>
+            <div class="w3-row">
+              <div class="w3-half">
+                <select name="district" required="required" id="district" class="w3-container w3-right">
+                  <option value="" selected disabled hidden>محله</option>
+                </select>
+              </div>
+              <div class="w3-half">
+                <input class="" id="street" size="16" name="street" placeholder="خیابان" required/>
+              </div>
+            </div>
+            <div class="w3-row">
+              <div class="w3-half">
+                <input class="" id="alley" size="16" name="alley" placeholder="کوچه" required/>
+              </div>
+              <div class="w3-half">
+                <input class="" id="plaque" size="16" name="plaque" placeholder="پلاک" required/>
+              </div>
+            </div>
+          </div>
+          <div class="w3-panel">
+            <label class="" for="number">شماره تماس</label><br>
+            <input type="tel" class="" id="homeNum" name="homeNum" minlength="11" maxlength="11" placeholder="خانه 02511111111"
+              pattern="[0]{1}[2]{1}[5]{1}[0-9]{8}" required/>
+            <input type="tel" class="" id="phoneNum" name="phoneNum" minlength="11" maxlength="11" placeholder="همراه 09111111111"
+              pattern="[0]{1}[9]{1}[0-9]{9}" required/>
+            <input type="tel" class="" id="fatherNum" name="fatherNum" minlength="11" maxlength="11" placeholder="پدر 09111111111"
+              pattern="[0]{1}[9]{1}[0-9]{9}" required/>
+            <input type="tel" class="" id="motherNum" name="motherNum" minlength="11" maxlength="11" placeholder="مادر 09111111111"
+              pattern="[0]{1}[9]{1}[0-9]{9}" required/>
+          </div>
+          <div class="w3-panel">
+            <select name="group" required="required" id="group" class="">
+              <option value="" selected disabled hidden>گروه خود را انتخاب کنید</option>
+            </select>
+          </div>
+          <div class="w3-panel">
+            <label class="" for="basij">عضو بسیج هستم</label>
+            <input class="" id="basij" name="basij" type="checkbox"/>
+          </div>
+          <div class="w3-panel">
+            <label class="" for="ssn">شماره شناسنامه</label>
+            <input class="" id="ssn" name="ssn" placeholder="شماره شناسنامه" required/>
+          </div>
+          <div class="w3-panel">
+            <label class="" for="password">گذرواژه</label>
+            <input type="password" name="password" class="" placeholder="گذرواژه" required/>
+          </div>
+          <div class="w3-panel w3-center">
+            <button class="w3-button w3-border w3-block w3-white w3-round-large">ثبت نام</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>

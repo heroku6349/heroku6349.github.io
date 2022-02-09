@@ -1,0 +1,27 @@
+.mySlides {
+  display: none;
+}
+
+.w3-left, .w3-right, .w3-badge {
+  cursor: pointer;
+}
+
+.w3-badge {
+  height: 13px;
+  width: 13px;
+  padding: 0;
+}
+
+.mySidebar {
+  display: none;
+  right: 0;
+}
+
+@font-face {
+  font-family: IRANsans;
+  src: url("static/fonts/IRANSansWeb.woff2") format('woff2');
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: IRANsans;
+}

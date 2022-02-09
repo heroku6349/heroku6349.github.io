@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="IR-fa" dir="rtl">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ورود</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='../global.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='../config.js' defer></script>
+    <script src='main.js' defer></script>
+  </head>
+
+  <body>
+    <div class="back-img">
+      <div class="w3-card w3-round-xlarge w3-display-middle w3-padding-large"
+        style="max-width: 400px; background-color: rgba(200, 220, 255, 0.5)">
+        <form onsubmit="handleSubmit()" class="" id="form">
+          <div class="w3-panel">
+            <label class="" for="username">نام کاربری</label>
+            <input class="" id="username" name="username" placeholder="پیشفرض: شماره شناسنامه" required/>
+          </div>
+          <div class="w3-panel">
+            <label class="" for="password">گذرواژه</label>
+            <input class="" type="password" id="password" name="password" placeholder="گذرواژه" required/>
+          </div>
+          <div class="w3-panel w3-center">
+            <button class="w3-button w3-border w3-block w3-white w3-round-large">ورود</button>
+          </div>
+        </form>
+        <div class="w3-center">
+          <a href="/signup/"><b>ساخت حساب کاربری</b></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
