@@ -8,30 +8,38 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel='stylesheet' type='text/css' media='screen' href='../../global.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='../../static/assets/main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='../../config.js' defer></script>
+    <script src='../../static/assets/main.js' defer></script>
     <script src='main.js' defer></script>
   </head>
 
   <body>
-	<div class="w3-row w3-green">
-		<div class="w3-right" style="width:60px">
-		  <button id="openNav" class="w3-button w3-xlarge" onclick="w3_togle()"><i class="fa fa-bars"></i></button>
-		</div>
-		<div class="w3-left" style="width:60px">
-		  <button id="openNav" class="w3-button w3-xlarge w3-left" onclick=""><i class="fa fa-search"></i></button>
-		</div>
-		<div class="w3-rest w3-center">
-		  <h1 class="w3-large">مسجد چهارده معصوم (ع)</h1>
-		</div>
-	  </div>
-  
-	  <div class="w3-sidebar w3-bar-block w3-card w3-animate-right mySidebar" id="mySidebar">
-		<a href="/login/" class="w3-bar-item w3-button">ورود کاربران</a>
-		<a href="#" class="w3-bar-item w3-button">Link 2</a>
-		<a href="#" class="w3-bar-item w3-button">Link 3</a>
-	  </div>
+    <div class="w3-row w3-green w3-top">
+      <div class="w3-right" style="width:60px">
+        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_togle()"><i class="fa fa-bars"></i></button>
+      </div>
+      <div class="w3-left" style="width:60px">
+        <button id="openNav" class="w3-button w3-xlarge w3-left" onclick=""><i class="fa fa-search"></i></button>
+      </div>
+      <div class="w3-rest w3-center">
+        <h1 class="w3-large">مسجد چهارده معصوم (ع)</h1>
+      </div>
+    </div>
+
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-right w3-center mySidebar" id="mySidebar">
+      <a onclick="logout()" class="w3-bar-item w3-button">خروج</a>
+    </div>
+
+    <section>
+      <div id="main" class="w3-container" style="margin-top: 52px;"></div>
+    </section>
+
+    <hr>
+
+    <footer>
+
+    </footer>
   </body>
 </html>

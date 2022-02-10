@@ -1,5 +1,3 @@
-const API = "https://kanoon-backend.herokuapp.com/";
-
 let district = [
 	"آذر",
 	"آزادگان",
@@ -63,7 +61,8 @@ document.addEventListener("submit", (event) => {
 function handleSubmit() {
 	let body = new URLSearchParams(new FormData(document.forms.form));
 	fetch(API + "/signup", {
-		method: 'POST',
+		method: "POST",
+		credentials: "include",
 		mode: 'cors',
 		body: body,
 	}).then((res) => {
@@ -75,10 +74,6 @@ function handleSubmit() {
 	}).catch((err) => {
         alert(err.message);
     });
-}
-
-function redirect(pathName) {
-	window.location.assign(window.location.origin + pathName);
 }
 
 loadDistrict();

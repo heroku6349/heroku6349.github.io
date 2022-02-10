@@ -4,7 +4,6 @@ let timeout;
 function w3_togle() {
     let state = document.getElementById("openNav").innerHTML;
     if (state == '<i class="fa fa-bars"></i>') {
-        document.getElementById("mySidebar").style.width = "200px";
         document.getElementById("mySidebar").style.display = "block";
         document.getElementById("openNav").innerHTML = '<i class="fa fa-close"></i>';
     }

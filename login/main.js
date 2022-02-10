@@ -19,7 +19,3 @@ function handleSubmit() {
         alert(err.message);
     });
 }
-
-function redirect(pathName) {
-	window.location.assign(window.location.origin + pathName);
-}
