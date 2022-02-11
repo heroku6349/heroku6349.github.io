@@ -54,12 +54,8 @@ function loadGroups() {
 	});
 }
 
-document.addEventListener("submit", (event) => {
-	event.preventDefault();
-});
-
 function handleSubmit() {
-	let body = new URLSearchParams(new FormData(document.forms.form));
+	let body = new URLSearchParams(new FormData(form));
 	fetch(API + "/signup", {
 		method: "POST",
 		credentials: "include",
@@ -67,7 +63,7 @@ function handleSubmit() {
 		body: body,
 	}).then((res) => {
 		if (res.status == 200) {
-			redirect("/pages/profile/");
+			redirect("/pages/panel/");
 		} else {
 			res.json().then((res) => alert(res.reason));
 		}

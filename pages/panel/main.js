@@ -11,7 +11,7 @@ function w3_togle() {
 }
 
 function createUserTable(user) {
-    return  `<h2 class="w3-large">اطلاعات کاربری</h2>
+    return `<h2 class="w3-large">اطلاعات کاربری</h2>
                 <table class="w3-table w3-striped w3-centered">
                 <tr>
                 </tr>
@@ -74,16 +74,52 @@ function createUserTable(user) {
             </table>`;
 }
 
+function createPostPanel() {
+    return `<div id="main" class="w3-container">
+    <form onsubmit="handlePostSubmit()" class="" id="postForm" enctype="multipart/form-data">
+      <div class="w3-panel">
+        <label class="" for="title">عنوان</label>
+        <input class="w3-input w3-border w3-round-large" id="title" name="title" placeholder="عنوان پست" required/>
+      </div>
+      <div class="w3-panel">
+        <label class="" for="image">عکس</label>
+        <input class="w3-input w3-border w3-round-large" id="image" type="file" name="image" accept="image/png, image/gif, image/jpeg" required/>
+      </div>
+      <div class="w3-panel">
+        <label class="" for="content">متن</label>
+        <textarea class="w3-input w3-border w3-round-large" id="content" name="content" placeholder="متن پست" style="height:200px"></textarea>
+      </div>
+      <div class="w3-panel">
+        <label class="" for="content">تگ</label>
+        <select class="w3-input w3-border w3-round-large" name="tag" required="required" id="tag">
+          <option value="گزارش">گزارش</option>
+          <option value="اطلاع_رسانی">اطلاع رسانی</option>
+          <option value="اعلام_برنامه">اعلام برنامه</option>
+          <option value="سایر">سایر</option>
+        </select>
+      </div>
+      <div class="w3-panel">
+        <button class="w3-button w3-border w3-block w3-white w3-round-large">ثبت</button>
+      </div>
+    </form>
+    </div>`;
+}
+
+function showPostPanel() {
+    document.getElementById("main").innerHTML = createPostPanel();
+    w3_togle();
+}
+
 function createSidebar(user) {
     let content = "";
     if (user.permissions.adminAccess) {
-        content += `<a href="/pages/panel/admin" class="w3-bar-item w3-button">پنل مدیریت</a>`
+        content += `<a onclick="createAdminPanel()" class="w3-bar-item w3-button">پنل مدیریت</a>`;
     }
     if (user.permissions.postAccess) {
-        content += `<a href="/pages/panel/post" class="w3-bar-item w3-button">مدیریت پست ها</a>`
+        content += `<a onclick="showPostPanel()" class="w3-bar-item w3-button">مدیریت پست ها</a>`;
     }
     if (user.permissions.HRAccess) {
-        content += `<a href="/pages/panel/hr" class="w3-bar-item w3-button">مدیریت اعضا</a>`
+        content += `<a onclick="createHRPanel()" class="w3-bar-item w3-button">مدیریت اعضا</a>`;
     }
     return content;
 }
@@ -123,6 +159,23 @@ function logout() {
             });
         }
     }).catch((err) => {
+        alert(err.message);
+    });
+}
+
+function handlePostSubmit() {
+	fetch(API + "/addpost", {
+		method: "POST",
+		credentials: "include",
+		mode: "cors",
+		body: new FormData(postForm)
+	}).then((res) => {
+		if (res.status == 200) {
+			alert("Post submitted successfully");
+		} else {
+			res.json().then((res) => alert(res.reason));
+		}
+	}).catch((err) => {
         alert(err.message);
     });
 }
